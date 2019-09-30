@@ -20,7 +20,7 @@ module.exports = {
         {
           test: 'ERR!',                // the string we are testing for
           title: 'ERR! was detected!', // node-notifier config
-          message: 'check hyperterm',   // node-notifier config
+          message: 'check hyperterm',  // node-notifier config
           sound: 'Funk',
         }
       ]
