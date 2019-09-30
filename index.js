@@ -55,8 +55,3 @@ function registerConfigs() {
 
   return {...defaultConfig, ...newConfig}
 }
-
-exports.mapTermsState = (state, map) => {
-  console.log('mapTermsState')
-  return map
-};
