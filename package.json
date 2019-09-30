@@ -1,6 +1,6 @@
 {
   "name": "hyper-notifier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Hyper extension for sending cross platform desktop notifications",
   "main": "index.js",
   "scripts": {
