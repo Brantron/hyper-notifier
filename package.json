@@ -1,7 +1,7 @@
 {
   "name": "hyper-notifier",
   "version": "1.0.1",
-  "description": "A Hyper extension for sending cross platform desktop notifications",
+  "description": "A notifications and alerting plugin for Hyper.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,7 +1,7 @@
 # hyper-notifier
 ![](https://cl.ly/660846eb0602/Screen%252520Recording%2525202019-09-29%252520at%25252006.07%252520PM.gif)
 
-hyper-notifier a notifications plugin for hyperterm. This allows similar functionality to Iterm which allow users to add a config, and register alerts based on console output. Under the hood it is a wrapper around [Node Notifier](https://github.com/mikaelbr/node-notifier)
+**hyper-notifier is a notifications and alerting plugin for [Hyper.js](https://hyper.is/)**. This allows similar functionality to Iterm which allow users to add a config, and register alerts based on console output. Under the hood it is a wrapper around [Node Notifier](https://github.com/mikaelbr/node-notifier)
 
 ## Getting Started
 
