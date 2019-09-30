@@ -1,6 +1,6 @@
 {
   "name": "hyper-notifier",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A notifications and alerting plugin for Hyper.js",
   "main": "index.js",
   "scripts": {

@@ -1,27 +1,20 @@
 const notifier = require('node-notifier');
 
 let notifications = []
-let newConfig = {}
-let defaultConfig = {
-  registered: false,
-  sound: 'Basso'
-}
+let notifierString;
+
+exports.onApp = registerConfigs
 
 exports.middleware = (store) => (next) => (action) => {
   if ('SESSION_PTY_DATA' === action.type) {
     const { data } = action;
     if (isNotifierString(data)) {
-      // load user configs
-      if(!defaultConfig.registered) {
-        defaultConfig = registerConfigs()
+      // load notificaion configs
+      const instanceOverrides = findNotifierString(data)
+
+      if(instanceOverrides) {
+        notifier.notify(instanceOverrides);
       }
-
-      const instanceOverrides = findNotifierString(data) || {}
-
-      notifier.notify({
-        ...defaultConfig,
-        ...instanceOverrides
-      });
     }
     next(action);
   } else {
@@ -31,7 +24,7 @@ exports.middleware = (store) => (next) => (action) => {
 
 
 function isNotifierString(data) {
-  return new RegExp('(' + notifications.map(n => n.test).join(')|(') + ')').test(data)
+  return new RegExp('(' + notifierString + ')').test(data)
 }
 
 function findNotifierString(data) {
@@ -42,16 +35,16 @@ function findNotifierString(data) {
 
 function registerConfigs() {
   const notifierConfigs = config.getConfig().hyperNotifier
-  if(notifierConfigs.settings) {
-    newConfig = {
-      ...notifierConfigs,
-      registered: true
-    }
+
+  if(notifications.length > 0 && !notifierString) {
+    return
   }
 
   if(notifierConfigs.notifications) {
     notifications = notifierConfigs.notifications
   }
 
-  return {...defaultConfig, ...newConfig}
+  if (!notifierString) {
+    notifierString = notifications.map(n => n.test).join(')|(')
+  }
 }

@@ -10,20 +10,18 @@ First add the plugin to your plugins in your `.hyper.js`
 ```
 plugins: ["hyper-notifier"],
 ```
-Then register your base settings (optional) and notifications (required) in your `.hyper.js`
+Then register your notifications in your `.hyper.js`
 
 ```
 module.exports = {
   config: {
     hyperNotifier: {
-      settings: {
-        sound: 'Funk'
-      },
       notifications: [
         {
           test: 'ERR!',                // the string we are testing for
           title: 'ERR! was detected!', // node-notifier config
-          message: 'check hyperterm'   // node-notifier config
+          message: 'check hyperterm',   // node-notifier config
+          sound: 'Funk',
         }
       ]
     }
