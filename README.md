@@ -1,5 +1,5 @@
 # hyper-notifier
-![](https://cl.ly/660846eb0602/Screen%252520Recording%2525202019-09-29%252520at%25252006.07%252520PM.gif)
+![](https://cl.ly/3191dc78d5b7/Screen%252520Recording%2525202019-10-02%252520at%25252012.43%252520AM.gif)
 
 **hyper-notifier is a notifications and alerting plugin for [Hyper.js](https://hyper.is/)**. This allows similar functionality to Iterm which allow users to add a config, and register alerts based on console output. Under the hood it is a wrapper around [Node Notifier](https://github.com/mikaelbr/node-notifier)
 
@@ -19,9 +19,14 @@ module.exports = {
       notifications: [
         {
           test: 'ERR!',                // the string we are testing for
-          title: 'ERR! was detected!', // node-notifier config
-          message: 'check hyperterm',  // node-notifier config
+          title: 'ERR! was detected!', // notification title
           sound: 'Funk',
+        }
+        {
+          test: 'y/n',                 // the string we are testing for
+          title: 'response needed',    // notification title
+          reply: true,                 // wait for response
+          wait: 30                     // wait 30 seconds
         }
       ]
     }
