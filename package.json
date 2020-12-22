@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/Brantron/hyper-notifier#readme",
   "dependencies": {
-    "node-notifier": "^6.0.0",
+    "node-notifier": "^8.0.1",
     "strip-ansi": "5.2.0"
   }
 }
